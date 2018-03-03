@@ -1,10 +1,20 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
   <a class="navbar-brand" routerLink="/">OShop</a>
-  <button class="navbar-toggler" (click)="isNavbarCollapsed = !isNavbarCollapsed" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button 
+    (click)="toggleMenu()" 
+    [attr.aria-expanded]="!isCollapsed" 
+    class="navbar-toggler"  
+    type="button" 
+    data-toggle="collapse" 
+    data-target="#navbarsExampleDefault" 
+    aria-controls="navbarsExampleDefault" 
+    aria-expanded="false" 
+    aria-label="Toggle navigation"
+  >
+  <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="navbarsExampleDefault">
+  <div [ngbCollapse]="isCollapsed" class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" routerLink="/shopping-cart">Shopping Cart</a>
