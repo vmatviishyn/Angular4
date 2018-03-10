@@ -1,8 +1,11 @@
 import { Product } from './product';
 
 export class ShoppingCartItem {
+    $key: string;
+    title: string;
+    imageUrl: string;
+    price: number;
+    quantiti: number;
     
-    constructor(public product: Product, public quantiti: number){ }
-    
-    get totalPrice() { return this.product.price * this.quantiti; }
+    get totalPrice() { return this.price * this.quantiti; }
 }
