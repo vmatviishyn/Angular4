@@ -10,10 +10,7 @@ import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   imports: [
-    CommonModule,
     SharedModule,
-    CustomFormsModule,
-    FormsModule,
     RouterModule.forChild([])
   ],
   declarations: [
