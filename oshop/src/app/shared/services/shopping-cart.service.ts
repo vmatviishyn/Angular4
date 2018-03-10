@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
-import { ShoppingCart } from './models/shopping-cart';
-import { Product } from './models/product';
+import { ShoppingCart } from '../models/shopping-cart';
+import { Product } from '../models/product';
 import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/take';
@@ -49,7 +49,7 @@ export class ShoppingCartService {
     return result.key;
   }
 
-  private async updateItem(product: Product, change: number){
+  private async updateItem(product: Product, change: number) {
     let cartId = await this.getOrCreateCartId();
     let item$ = this.getItem(cartId, product.$key);
     item$.take(1).subscribe(item => {
@@ -60,8 +60,7 @@ export class ShoppingCartService {
         imageUrl: product.imageUrl,
         price: product.price,
         quantiti: quantiti
+      });
     });
   }
-
-
 }
